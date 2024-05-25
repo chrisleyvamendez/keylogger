@@ -5,10 +5,13 @@
 #ifndef KEYLOG_H
 #define KEYLOG_H
 
-#include "Key.h"
-#include "FileHandler.h"
+#include <atomic>
 
+
+#include "FileHandler.h"
+#include "Key.h"
 #include <string>
+#include <thread>
 
 
 class KeyLog {
@@ -20,8 +23,9 @@ public:
 
 private:
   Key keyHandler;
-  bool running;
+  std::atomic<bool> running;
   FileHandler fileHandler;
+  std::thread logthread;
 };
 
 
