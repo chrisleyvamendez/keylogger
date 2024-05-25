@@ -15,6 +15,7 @@ class Key {
 public:
   explicit Key(const std::string& fname);
   static std::string translateKey(int key);
+  static bool shift_caps_upper();
 };
 
 
