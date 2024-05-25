@@ -2,9 +2,13 @@ cmake_minimum_required(VERSION 3.28)
 project(keylogger)
 
 set(CMAKE_CXX_STANDARD 17)
+# include the subdirectory files
+include_directories(include)
 
-add_executable(keylogger main.cpp
-    Key.h
-    Key.cpp
-    Keylog.h
-    KeyLog.cpp)
+add_executable(keylogger src/main.cpp
+    include/Key.h
+    src/Key.cpp
+    include/Keylog.h
+    src/KeyLog.cpp
+    src/FileHandler.cpp
+    include/FileHandler.h)

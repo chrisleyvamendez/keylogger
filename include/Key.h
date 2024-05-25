@@ -8,17 +8,13 @@
 #include <string>
 #include <fstream>
 
+/**
+ * function to handle the keystroke translation
+ */
 class Key {
 public:
-  // Constructor
   explicit Key(const std::string& fname);
-  ~Key();
-
-  void logKey(char key);
   static std::string translateKey(int key);
-
-private:
-  std::ofstream keyLog;
 };
 
 

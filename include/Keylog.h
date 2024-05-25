@@ -6,17 +6,22 @@
 #define KEYLOG_H
 
 #include "Key.h"
+#include "FileHandler.h"
 
 #include <string>
 
+
 class KeyLog {
 public:
-  KeyLog(const std::string &fname);
+  explicit KeyLog(const std::string &fname);
   void start();
+  void stop();
+  void logLoop();
 
 private:
   Key keyHandler;
-  void logLoop();
+  bool running;
+  FileHandler fileHandler;
 };
 
 
