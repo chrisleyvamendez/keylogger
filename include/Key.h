@@ -6,6 +6,7 @@
 #define KEY_H
 
 #include <string>
+#include <fstream>
 
 /**
  * function to handle the keystroke translation
@@ -13,7 +14,7 @@
 class Key {
 public:
   explicit Key(const std::string& fname);
-  static std::string translateKey(const int key);
+  static std::string translateKey(signed char key);
 };
 
 

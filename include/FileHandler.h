@@ -4,7 +4,6 @@
 #include <string>
 #include <fstream>
 #include <filesystem>
-#include <stdexcept>
 
 class FileHandler {
 public:
